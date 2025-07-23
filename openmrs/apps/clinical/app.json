@@ -1,0 +1,433 @@
+{
+    "id": "bahmni.clinical",
+    "extensionPoints": [
+        {
+            "id": "org.bahmni.clinical.consultation.board",
+            "description": "Bahmni Clinical Consultation Page"
+        },
+        {
+            "id": "org.bahmni.clinical.conceptSetGroup.*",
+            "description": "Define conceptsets part of a conceptset group"
+        },
+        {
+            "id": "org.bahmni.clinical.orders",
+            "description": "Bahmni Orders Page"
+        },
+        {
+            "id": "org.bahmni.patient.search",
+            "description": "Bahmni Patient search, lookups Page"
+        }
+    ],
+    "contextModel": [
+        "patientUuid",
+        "visitUuid"
+    ],
+    "config": {
+        "hideConditions": false,
+        "enableRadiologyOrderOptions":["Urgent","NeedsPrint"],
+        "quickPrints":false,
+        "networkConnectivity" : {
+            "showNetworkStatusMessage": false,
+            "networkStatusCheckInterval": 20000,
+            "locales" : [
+                { "locale" : "fr", "css" : "offline-language-french"},
+                { "locale" : "es", "css": "offline-language-spanish"},
+                { "locale" : "pt", "css": "offline-language-portuguese-brazil"}
+            ]
+        },
+    	"diagnosisStatus": "Inactive",
+        "program": {
+            "patientInformation": {
+                "ageLimit": 100
+            },
+            "PROGRAM_MANAGEMENT_3_PATIENT_COMORBIDITES": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_DEFAULTERS_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY","IPT_PROGRAM_KEY"]
+            },
+            "PROGRAM_MANAGEMENT_COUNTRY_TRANSFERRED_TO": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_DEFAULTERS_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY","IPT_PROGRAM_KEY"]
+            },
+            "PROGRAM_MANAGEMENT_6_LABEL_THERAPEUTIC_LINE": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_DEFAULTERS_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY","IPT_PROGRAM_KEY"],
+                "important": true
+            },
+            "PROGRAM_MANAGEMENT_8_LABEL_IS_BREASTFEEDING": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_DEFAULTERS_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY","IPT_PROGRAM_KEY"]
+            },
+            "PROGRAM_MANAGEMENT_1_DURATION_ON_ART": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY","IPT_PROGRAM_KEY"]
+            },
+            "PROGRAM_MANAGEMENT_5_PATIENT_STAGE": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_DEFAULTERS_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY","IPT_PROGRAM_KEY"]
+            },
+            "PROGRAM_MANAGEMENT_90_DATE_ELIGIBLE_COMMUNITY_ART": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_DEFAULTERS_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY","IPT_PROGRAM_KEY"]
+            },
+            "PROGRAM_MANAGEMENT_91_DATE_ENROLLED_COMMUNITY_ART": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_DEFAULTERS_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY","IPT_PROGRAM_KEY"]
+            },
+            "PROGRAM_MANAGEMENT_92_ART_DISPENSATION_MODEL": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_DEFAULTERS_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY","IPT_PROGRAM_KEY"]
+            },
+            "PROGRAM_MANAGEMENT_93_DATE_STOPPED_COMMUNITY_ART": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_DEFAULTERS_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY","IPT_PROGRAM_KEY"]
+            },
+            "PROGRAM_MANAGEMENT_4_PATIENT_DOCTOR_IN_CHARGE": {
+                "excludeFrom": ["HIV_DEFAULTERS_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY","IPT_PROGRAM_KEY"]
+            },
+            "PROGRAM_MANAGEMENT_1_ART_NUMBER": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_DEFAULTERS_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY","IPT_PROGRAM_KEY"]
+            },
+            "PROGRAM_MANAGEMENT_701_STIGMA": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY","IPT_PROGRAM_KEY"]
+            },
+            "PROGRAM_MANAGEMENT_702_LONG_DISTANCE": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY","IPT_PROGRAM_KEY"]
+            },
+            "PROGRAM_MANAGEMENT_703_COST_OF_TRANSPORT": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY","IPT_PROGRAM_KEY"]
+            },
+            "PROGRAM_MANAGEMENT_704_SIDE_EFFECTS_OF_ARVS": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY","IPT_PROGRAM_KEY"]
+            },
+            "PROGRAM_MANAGEMENT_705_COST_OF_SERVICES": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY","IPT_PROGRAM_KEY"]
+            },
+            "PROGRAM_MANAGEMENT_706_STAFF_ATTITUDE": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY","IPT_PROGRAM_KEY"]
+            },
+            "PROGRAM_MANAGEMENT_707_TRADITIONAL_BELIEFS": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY","IPT_PROGRAM_KEY"]
+            },
+            "PROGRAM_MANAGEMENT_708_RELIGIOUS_BELIEFS": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY","IPT_PROGRAM_KEY"]
+            },
+            "PROGRAM_MANAGEMENT_709_DENIAL": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY","IPT_PROGRAM_KEY"]
+            },
+            "PROGRAM_MANAGEMENT_710_INCONVENIENT_SERVICE_HOURS": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY","IPT_PROGRAM_KEY"]
+            },
+            "PROGRAM_MANAGEMENT_711_TRAVEL": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY","IPT_PROGRAM_KEY"]
+            },
+            "PROGRAM_MANAGEMENT_712_FEELS_HEALTHY": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY","IPT_PROGRAM_KEY"]
+            },
+            "PROGRAM_MANAGEMENT_713_INSECURITY": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY","IPT_PROGRAM_KEY"]
+            },
+            "PROGRAM_MANAGEMENT_714_OTHER_DEFAULTING_REASON": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY","IPT_PROGRAM_KEY"]
+            },
+            "PROGRAM_MANAGEMENT_OTHER_PROGRAM_OUTCOME": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY","IPT_PROGRAM_KEY"]
+            },
+            "PROGRAM_MANAGEMENT_2_LAST_FAILED_APPOINTMENT_DATE": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY","IPT_PROGRAM_KEY"]
+            },
+            "PROGRAM_MANAGEMENT_3_PRETRACKING_OUTCOME": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY","IPT_PROGRAM_KEY"]
+            },
+            "PROGRAM_MANAGEMENT_9_RETURNED_TO_TREATMENT_DATE": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY","IPT_PROGRAM_KEY"]
+            },
+            "PROGRAM_MANAGEMENT_4_TRACKING_DATE": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY","IPT_PROGRAM_KEY"],
+                "required" : true
+            },
+            "PROGRAM_MANAGEMENT_5_APS_NAME": {
+                "excludeFrom": ["INDEX_TESTING_PROGRAM_KEY", "PMTCT_PROGRAM_KEY","IPT_PROGRAM_KEY"]
+            },
+            "PROGRAM_MANAGEMENT_6_TRACKING_OUTCOME": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY","IPT_PROGRAM_KEY"]
+            },
+            "PROGRAM_MANAGEMENT_1_NOTIFICATION_METHOD": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_PROGRAM_KEY", "HIV_DEFAULTERS_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY","IPT_PROGRAM_KEY"]
+            },
+            "PROGRAM_MANAGEMENT_2_NOTIFICATION_DATE": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_PROGRAM_KEY", "HIV_DEFAULTERS_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY","IPT_PROGRAM_KEY"]
+            },
+            "PROGRAM_MANAGEMENT_3_NOTIFICATION_OUTCOME": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_PROGRAM_KEY", "HIV_DEFAULTERS_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY","IPT_PROGRAM_KEY"]
+            },
+            "PROGRAM_MANAGEMENT_4_CONTACT_TRACER": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_PROGRAM_KEY", "HIV_DEFAULTERS_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY","IPT_PROGRAM_KEY"]
+            },
+            "PROGRAM_MANAGEMENT_5_COMMENTS": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_PROGRAM_KEY", "HIV_DEFAULTERS_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY","IPT_PROGRAM_KEY"]
+            },
+            "PROGRAM_MANAGEMENT_2_PATIENT_TREATMENT_DATE": {
+                "excludeFrom": ["INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY","IPT_PROGRAM_KEY"],
+                "important" : true
+            },
+            "PROGRAM_MANAGEMENT_1_EAC_DATE": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_PROGRAM_KEY", "HIV_DEFAULTERS_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "PMTCT_PROGRAM_KEY","IPT_PROGRAM_KEY"],
+                "required" : true
+            },
+            "PROGRAM_MANAGEMENT_2_CLASSIFICATION_OF_ADHERENCE": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_PROGRAM_KEY", "HIV_DEFAULTERS_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "PMTCT_PROGRAM_KEY","IPT_PROGRAM_KEY"]
+            },
+            "PROGRAM_MANAGEMENT_3_RESISTANCE_TEST_DONE": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_PROGRAM_KEY", "HIV_DEFAULTERS_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "PMTCT_PROGRAM_KEY","IPT_PROGRAM_KEY"]
+            },
+            "PMTCT_PROGRAM_MANAGEMENT_FP_METHOD": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_PROGRAM_KEY", "HIV_DEFAULTERS_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY","IPT_PROGRAM_KEY"]
+            },
+            "PMTCT_PROGRAM_MANAGEMENT_ANC_CODE": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_PROGRAM_KEY", "HIV_DEFAULTERS_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY","IPT_PROGRAM_KEY"]
+            },
+            "PMTCT_PROGRAM_MANAGEMENT_APS_NAME": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_PROGRAM_KEY", "HIV_DEFAULTERS_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY","IPT_PROGRAM_KEY"]
+            },
+            "IPT_PROGRAM_MANAGEMENT_CLINICAL_STAGE": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_PROGRAM_KEY", "HIV_DEFAULTERS_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY"]
+            },
+            "IPT_PROGRAM_MANAGEMENT_PROTOCOL": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_PROGRAM_KEY", "HIV_DEFAULTERS_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY"]
+            },
+            "IPT_PROGRAM_MANAGEMENT_REASON_FOR_INITIATION": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_PROGRAM_KEY", "HIV_DEFAULTERS_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY"]
+            },
+            "IPT_PROGRAM_MANAGEMENT_OUTCOME": {
+                "excludeFrom": ["TB_PROGRAM_KEY", "HIV_PROGRAM_KEY", "HIV_DEFAULTERS_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY"]
+            },
+            "PROGRAM_MANAGEMENT_FACILITY_TRANSFERED_TO": {
+                "excludeFrom": ["IPT_PROGRAM_KEY","TB_PROGRAM_KEY", "HIV_DEFAULTERS_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY"]
+            },
+            "PROGRAM_MANAGEMENT_REASON_FOR_OUTCOME": {
+                "excludeFrom": ["IPT_PROGRAM_KEY","TB_PROGRAM_KEY", "HIV_DEFAULTERS_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY"]
+            },
+            "PROGRAM_MANAGEMENT_OUTCOME_DATE": {
+                "excludeFrom": ["IPT_PROGRAM_KEY","TB_PROGRAM_KEY", "HIV_DEFAULTERS_PROGRAM_KEY", "INDEX_TESTING_PROGRAM_KEY", "VL_EAC_PROGRAM_KEY", "PMTCT_PROGRAM_KEY"]
+            }
+        },
+        "patientContext": {
+        	"programAttributes": [
+                "Id_Number",
+                "Doctor",
+                "Stage"
+        	],
+        	"personAttributes": [
+                "class",
+                "caste"
+            ],
+            "additionalPatientIdentifiers": [
+                "National ID"
+       		],
+        	"preferredIdentifier": "Id_Number"
+    	},
+        "obsIgnoreList": [
+            "REGISTRATION FEES",
+            "COMMENTS",
+            "Patient file"
+        ],
+        "otherInvestigationsMap": {
+            "Radiology": "Radiology Order",
+            "Endoscopy": "Endoscopy Order"
+        },
+        "allowConsultationWhenNoOpenVisit": false,
+        "defaultVisitType": "OPD",
+        "visitTypeForRetrospectiveEntries": "Special OPD",
+        "maxConceptSetLevels": 3,
+        "allowOnlyCodedDiagnosis": false,
+        "conceptSetUI": {
+            "Chief Complaint Data": {
+                "autocomplete":true,
+                "codedConceptName":"Chief Complaint",
+                "nonCodedConceptName":"Non-Coded Chief Complaint",
+                "durationRequired": false,
+                "allowAddMore": true
+            },
+            "Are you pregnant": {
+                "important": true
+            },
+            "Number of people you have been in contact with": {
+                "required": true
+            },
+
+            "HTC, HIV Test": {
+                "important": true
+            },
+            "Index Testing": {
+                "important": true
+            },
+            "HIV Test Date": {
+                "important": true
+            },
+            "Index testing offered?": {
+                "important": true
+            },
+            "Index testing accepted?": {
+                "important": true
+            },
+            "HTC, Post-test Counseling Set": {
+                "important": true
+            },
+            "Start treatment ?": {
+                "important": true
+            },
+            "Reason for not starting treatment": {
+                "important": true
+            },
+            "HIV Status": {
+                "important": true
+            },
+            "HIV Tested": {
+                "important": true
+            },
+            "Final Result": {
+                "important": true
+            },
+            "Final Test Result": {
+                "important": true
+            },
+            "Prior to ANC Enrolment": {
+                "important": true
+            },
+            "At ANC Enrolment": {
+                "important": true 
+            },
+            "Eligible for HIV Repeat Test?": {
+                "important": true 
+            },
+            "3. Initial visit": {
+                "important": true 
+            },
+            "3.3 Treatments": {
+                "important": true 
+            },
+            "1. Index Testing": {
+                "important": true 
+            },
+            "Testing Entry Point and Modality": {
+                "important": true 
+            },
+            "HTC, Tested before": {
+                "important": true 
+            },
+            "HTC, Result if tested": {
+                "important": true 
+            },
+            "Date of First ANC Visit": {
+                "important": true 
+            },
+            "HTC, Result": {
+                "important": true 
+            },
+            "ARVs / ART": {
+                "important": true 
+            },
+            "ART, Status": {
+                "important": true 
+            },
+            "Start date": {
+                "important": true 
+            },
+            "Partners HIV status": {
+                "important": true 
+            },
+            "Systemic exam": {
+                "important": true 
+            },
+            "TB screened": {
+                "important": true 
+            },
+            "3.2 Systemic Exam": {
+                "important": true 
+            },
+            "TB screened date": {
+                "important": true 
+            },      
+            "1. Socio-demographic information": {
+                "important": true 
+            },
+            "Sexual orientation": {
+                "important": true 
+            },
+            "Pre-test Counseling": {
+                "important": true 
+            },
+            "Pregnancy Status": {
+                "important": true 
+            },
+            "Tuberculosis, Adverse Effects" :{
+                "multiSelect" : true,
+                "autocomplete" : true
+            },
+            "Posture": {
+                "buttonSelect": true
+            },
+            "P/A Presenting Part": {
+                "multiSelect": true
+            },
+            "FHS": {
+                "buttonSelect": true
+            },
+            "P/S (Per Speculum) - Cervix": {
+                "grid": true
+            },
+            "Anaemia, Stopped Since When": {
+                "conciseText": true
+            },
+            "Examination Notes": {
+                "conciseText": true
+            },
+            "Set1": {
+                "allowAddMore": true
+            },
+            "Set2": {
+                "allowAddMore": true
+            },
+            "Coded3": {
+                "multiSelect": true
+            },
+            "Image": {
+                "allowAddMore": true
+            },
+            "Gynaecology, Gravida": {
+                "stepper": true
+            },
+            "Accepted Family Planning methods": {
+                "multiSelect": true
+            },
+            "Appointment date": {
+                "allowFutureDates": true
+            },
+            "Expected Date of Delivery": {
+                "allowFutureDates": true
+            },
+            "Place of Birth": {
+                "required": true
+            },"Person who assisted the mother at the time of childbirth": {
+                "multiSelect": true
+            },
+            "Signs and symptoms": {
+                "multiSelect": true
+            },
+            "Covid-19 Risk factors": {
+                "multiSelect": true
+            },
+            "Other diseases AHD": {
+                "allowAddMore": true
+            },
+            "T°": {
+                "allowAddMore": true
+            },
+            "defaults": {
+                "Number of living children": 1,
+                "Accepted Family Planning methods": [
+                    "Condoms",
+                    "Pills"
+                ],
+                "Pain management given": true,
+                "Safe Abortion, Remarks": "Remarks",
+                "Malaria, Death Date": "2015-12-01"
+            }
+        },
+        "visitPage": {
+            "observationDisplay": {
+                "conceptNames": []
+            }
+        }
+    }
+}

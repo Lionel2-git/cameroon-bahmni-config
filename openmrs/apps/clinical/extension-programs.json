@@ -1,0 +1,355 @@
+{
+    "bahmniClinicalPatientsSearchActivePatientsForPrograms": {
+        "id": "bahmni.clinical.patients.search.activePatients",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.activePatients",
+            "translationKey": "MODULE_LABEL_PROGRAMS_KEY",
+            "forwardUrl": "#/programs/patient/{{patientUuid}}/consultationContext"
+        },
+        "label": "Active",
+        "order": 1,
+        "requiredPrivilege": "app:clinical"
+    },
+    "bahmniClinicalPatientsSearchDefaulterPatientsForPrograms": {
+        "id": "bahmni.clinical.patients.search.defaulterPatients",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.defaulterPatients",
+            "translationKey": "MODULE_LABEL_DEFAULTERS_PROGRAM_KEY",
+            "forwardUrl": "#/programs/patient/{{patientUuid}}/consultationContext",
+            "view": "tabular",
+            "searchColumns": [
+                "ID",
+                "PROGRAM_MODULE_LABEL_NAME_KEY",
+                "PROGRAM_MODULE_LABEL_VILLAGE_KEY",
+                "PROGRAM_MODULE_LABEL_ART_NUMBER_KEY",
+                "PROGRAM_MODULE_LABEL_PHONE_NUMBER_KEY",
+                "PROGRAM_MODULE_LABEL_EMERGENCY_CONTACT_KEY",
+                "PROGRAM_MODULE_LABEL_APS_NAME_KEY",
+                "PROGRAM_MODULE_LABEL_TRACKING_STATE_KEY",
+                "PROGRAM_MODULE_LABEL_TRACKING_OUTCOME_KEY"
+            ]
+        },
+        "label": "Active",
+        "order": 2,
+        "requiredPrivilege": "app:clinical"
+    },
+    "bahmniClinicalPatientsSearchDefaulterTracker": {
+        "id": "bahmni.clinical.patients.search.defaulterTracker",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.defaulterTracker",
+            "translationKey": "MODULE_LABEL_DEFAULTER_TRACKER_KEY",
+            "forwardUrl": "#/programs/patient/{{patientUuid}}/consultationContext",
+            "view": "tabular",
+            "searchColumns": [
+                "ID",
+                "PROGRAM_MODULE_LABEL_NAME_KEY",
+                "PROGRAM_MODULE_LABEL_VILLAGE_KEY",
+                "PROGRAM_MODULE_LABEL_ART_NUMBER_KEY",
+                "PROGRAM_MODULE_LABEL_PHONE_NUMBER_KEY",
+                "PROGRAM_MODULE_LABEL_EMERGENCY_CONTACT_KEY",
+                "PROGRAM_MODULE_LABEL_APS_NAME_KEY",
+                "PROGRAM_MODULE_LABEL_TRACKING_STATE_KEY",
+                "PROGRAM_MODULE_LABEL_TRACKING_OUTCOME_KEY",
+                "PROGRAM_MODULE_LABEL_PROGRAM_OUTCOME_KEY"
+            ]
+        },
+        "label": "Active",
+        "order": 3,
+        "requiredPrivilege": "app:clinical"
+    },
+    "bahmniClinicalPatientsSearchOldDefaulters": {
+        "id": "bahmni.clinical.patients.search.oldDefaulters",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.oldDefaulters",
+            "translationKey": "MODULE_LABEL_OLD_DEFAULTERS_KEY",
+            "forwardUrl": "#/programs/patient/{{patientUuid}}/consultationContext",
+            "view": "tabular",
+            "searchColumns": [
+                "ID",
+                "PROGRAM_MODULE_LABEL_NAME_KEY",
+                "PROGRAM_MODULE_LABEL_VILLAGE_KEY",
+                "PROGRAM_MODULE_LABEL_ART_NUMBER_KEY",
+                "PROGRAM_MODULE_LABEL_PHONE_NUMBER_KEY",
+                "PROGRAM_MODULE_LABEL_EMERGENCY_CONTACT_KEY",
+                "PROGRAM_MODULE_LABEL_APS_NAME_KEY",
+                "PROGRAM_MODULE_LABEL_TRACKING_STATE_KEY",
+                "PROGRAM_MODULE_LABEL_TRACKING_OUTCOME_KEY",
+                "PROGRAM_MODULE_LABEL_PROGRAM_OUTCOME_KEY"
+            ]
+        },
+        "label": "Active",
+        "order": 4,
+        "requiredPrivilege": "app:clinical"
+    },
+    "indexPatientsProgramsTab": {
+        "id": "bahmni.clinical.patients.search.indexPatients",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.indexPatients",
+            "translationKey": "MODULE_LABEL_INDEX_PATIENTS_PROGRAM_KEY",
+            "forwardUrl": "#/programs/patient/{{patientUuid}}/consultationContext",
+            "view": "tabular",
+            "searchColumns": [
+                "PROGRAM_MODULE_LABEL_NAME_KEY",
+                "PROGRAM_MODULE_LABEL_VILLAGE_KEY",
+                "PROGRAM_MODULE_LABEL_ART_NUMBER_KEY",
+                "PROGRAM_MODULE_LABEL_PHONE_NUMBER_KEY",
+                "PROGRAM_MODULE_LABEL_EMERGENCY_CONTACT_KEY",
+                "PROGRAM_MODULE_LABEL_APS_NAME_KEY",
+                "PROGRAM_MODULE_LABEL_TRACKING_STATE_KEY",
+                "PROGRAM_MODULE_LABEL_TRACKING_OUTCOME_KEY"
+            ]
+        },
+        "label": "Active",
+        "order": 5,
+        "requiredPrivilege": "app:clinical"
+    },
+    "indexContactsProgramsTab": {
+        "id": "bahmni.clinical.patients.search.indexContacts",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.indexContacts",
+            "translationKey": "MODULE_LABEL_INDEX_CONTACTS_PROGRAM_KEY",
+            "forwardUrl": "#/programs/patient/{{patientUuid}}/consultationContext",
+            "view": "tabular",
+            "searchColumns": [
+                "ID",
+                "PROGRAM_MODULE_LABEL_NAME_KEY",
+                "PROGRAM_MODULE_LABEL_VILLAGE_KEY",
+                "PROGRAM_MODULE_LABEL_ART_NUMBER_KEY",
+                "PROGRAM_MODULE_LABEL_PHONE_NUMBER_KEY",
+                "PROGRAM_MODULE_LABEL_EMERGENCY_CONTACT_KEY",
+                "PROGRAM_MODULE_LABEL_APS_NAME_KEY",
+                "PROGRAM_MODULE_LABEL_TRACKING_STATE_KEY",
+                "PROGRAM_MODULE_LABEL_TRACKING_OUTCOME_KEY"
+            ]
+        },
+        "label": "Active",
+        "order": 6,
+        "requiredPrivilege": "app:clinical"
+    },
+    "indexHistoryProgramsTab": {
+        "id": "bahmni.clinical.patients.search.indexHistory",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.indexHistory",
+            "translationKey": "MODULE_LABEL_INDEX_HISTORY_PROGRAM_KEY",
+            "forwardUrl": "#/programs/patient/{{patientUuid}}/consultationContext",
+            "view": "tabular",
+            "searchColumns": [
+                "ID",
+                "PROGRAM_MODULE_LABEL_NAME_KEY",
+                "PROGRAM_MODULE_LABEL_VILLAGE_KEY",
+                "PROGRAM_MODULE_LABEL_ART_NUMBER_KEY",
+                "PROGRAM_MODULE_LABEL_PHONE_NUMBER_KEY",
+                "PROGRAM_MODULE_LABEL_EMERGENCY_CONTACT_KEY",
+                "PROGRAM_MODULE_LABEL_APS_NAME_KEY",
+                "PROGRAM_MODULE_LABEL_TRACKING_STATE_KEY",
+                "PROGRAM_MODULE_LABEL_TRACKING_OUTCOME_KEY"
+            ]
+        },
+        "label": "Active",
+        "order": 7,
+        "requiredPrivilege": "app:clinical"
+    },
+    "vlEligiblePatientsTab": {
+        "id": "bahmni.clinical.patients.search.vlEligiblePatients",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.vlEligiblePatients",
+            "translationKey": "MODULE_LABEL_VL_ELIGIBILITY_KEY",
+            "forwardUrl": "#/programs/patient/{{patientUuid}}/consultationContext",
+            "view": "tabular",
+            "searchColumns": [
+                "ID",
+                "PROGRAM_MODULE_LABEL_NAME_KEY",
+                "PROGRAM_MODULE_LABEL_ART_NUMBER_KEY",
+                "PROGRAM_MODULE_LABEL_VILLAGE_KEY",
+                "PROGRAM_MODULE_LABEL_PHONE_NUMBER_KEY",
+                "PROGRAM_MODULE_LABEL_EMERGENCY_CONTACT_KEY"
+            ]
+        },
+        "label": "Active",
+        "order": 8,
+        "requiredPrivilege": "app:clinical"
+    },
+    "hvlPatientsTab": {
+        "id": "bahmni.clinical.patients.search.hvlPatientsTab",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.hvlPatients",
+            "translationKey": "MODULE_LABEL_HVL_PATIENTS_KEY",
+            "forwardUrl": "#/programs/patient/{{patientUuid}}/consultationContext",
+            "view": "tabular",
+            "searchColumns": [
+                "ID",
+                "PROGRAM_MODULE_LABEL_NAME_KEY",
+                "PROGRAM_MODULE_LABEL_ART_NUMBER_KEY",
+                "PROGRAM_MODULE_LABEL_VILLAGE_KEY",
+                "PROGRAM_MODULE_LABEL_PHONE_NUMBER_KEY",
+                "PROGRAM_MODULE_LABEL_EMERGENCY_CONTACT_KEY"
+            ]
+        },
+        "label": "Active",
+        "order": 9,
+        "requiredPrivilege": "app:clinical"
+    },
+    "eacTrackingTab": {
+        "id": "bahmni.clinical.patients.search.eacTrackingTab",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.eacTracking",
+            "translationKey": "MODULE_LABEL_EAC_TRACKING_PATIENTS_KEY",
+            "forwardUrl": "#/programs/patient/{{patientUuid}}/consultationContext",
+            "view": "tabular",
+            "searchColumns": [
+                "ID",
+                "PROGRAM_MODULE_LABEL_NAME_KEY",
+                "PROGRAM_MODULE_LABEL_VILLAGE_KEY",
+                "PROGRAM_MODULE_LABEL_PHONE_NUMBER_KEY",
+                "PROGRAM_MODULE_LABEL_EMERGENCY_CONTACT_KEY"
+            ]
+        },
+        "label": "Active",
+        "order": 10,
+        "requiredPrivilege": "app:clinical"
+    },
+    "bahmniClinicalPatientsSearchAllPatients": {
+        "id": "bahmni.clinical.patients.search.allPatients",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "translationKey": "MODULE_LABEL_ALL_KEY",
+            "forwardUrl": "#/programs/patient/{{patientUuid}}/consultationContext"
+        },
+        "label": "All",
+        "order": 11,
+        "requiredPrivilege": "app:clinical"
+    },
+    "bahmniClinicalConceptSetGroupObservationsHistory": {
+        "id": "bahmni.clinical.conceptSetGroup.observations.history",
+        "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+            "conceptName": "History and Examination",
+            "default": true
+        },
+        "order": 1,
+        "requiredPrivilege": "app:clinical:history"
+    },
+    "bahmniClinicalConceptSetGroupObservationsVitals": {
+        "id": "bahmni.clinical.conceptSetGroup.observations.vitals",
+        "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+            "default": true,
+            "conceptName": "Vitals"
+        },
+        "order": 2,
+        "requiredPrivilege": "app:clinical"
+    },
+    "bahmniClinicalConceptSetGroupObservationsSecondVitals": {
+        "id": "bahmni.clinical.conceptSetGroup.observations.secondVitals",
+        "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+            "conceptName": "Second Vitals",
+            "showIf": [
+                "var visitTypes = [];",
+                "if(visitTypes.length === 0) return true;",
+                "var visitTypeName = context.visitType ? context.visitType.name : null;",
+                "return visitTypes.indexOf(visitTypeName) !== -1;"
+            ]
+        },
+        "order": 3,
+        "requiredPrivilege": "app:clinical"
+    },
+    "bahmniClinicalConceptSetGroupObservationsObstetrics": {
+        "id": "bahmni.clinical.conceptSetGroup.observations.obstetrics",
+        "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+            "conceptName": "Obstetrics"
+        },
+        "order": 4,
+        "requiredPrivilege": "app:clinical"
+    },
+    "bahmniClinicalConceptSetGroupObservationsGynaecology": {
+        "id": "bahmni.clinical.conceptSetGroup.observations.gynaecology",
+        "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+            "conceptName": "Gynaecology"
+        },
+        "order": 5,
+        "requiredPrivilege": "app:clinical"
+    },
+    "bahmniClinicalConceptSetGroupObservationsDischargeSummary": {
+        "id": "bahmni.clinical.conceptSetGroup.observations.dischargeSummary",
+        "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+            "conceptName": "Discharge Summary"
+        },
+        "order": 6,
+        "requiredPrivilege": "Discharge Summary"
+    },
+    "observations": {
+        "id": "bahmni.clinical.consultation.observations",
+        "extensionPointId": "org.bahmni.clinical.consultation.board",
+        "type": "link",
+        "label": "Observations",
+        "translationKey": "OBSERVATIONS_BOARD_LABEL_KEY",
+        "url": "concept-set-group/observations",
+        "default": true,
+        "icon": "fa-user-md",
+        "order": 1,
+        "requiredPrivilege": "app:clinical:observationTab"
+    },
+    "diagnosis": {
+        "id": "bahmni.clinical.consultation.diagnosis",
+        "extensionPointId": "org.bahmni.clinical.consultation.board",
+        "type": "link",
+        "label": "Diagnosis",
+        "translationKey": "DIAGNOSIS_BOARD_LABEL_KEY",
+        "url": "diagnosis",
+        "icon": "fa-user-md",
+        "order": 2,
+        "requiredPrivilege": "app:clinical:diagnosisTab"
+    },
+    "disposition": {
+        "id": "bahmni.clinical.consultation.disposition",
+        "extensionPointId": "org.bahmni.clinical.consultation.board",
+        "type": "link",
+        "label": "Disposition",
+        "translationKey": "DISPOSITION_BOARD_LABEL_KEY",
+        "url": "disposition",
+        "icon": "fa-user-md",
+        "order": 3,
+        "requiredPrivilege": "app:clinical:dispositionTab"
+    },
+    "consultationSummary": {
+        "id": "bahmni.clinical.consultation.summary",
+        "extensionPointId": "org.bahmni.clinical.consultation.board",
+        "type": "link",
+        "label": "Consultation",
+        "url": "consultation",
+        "icon": "fa-user-md",
+        "order": 5,
+        "requiredPrivilege": "app:clinical:consultationTab"
+    }
+}

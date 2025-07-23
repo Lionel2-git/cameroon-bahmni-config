@@ -1,0 +1,6 @@
+uuid,Members,Answers,Fully specified name:fr,Fully specified name:en,Short name:fr,Short name:en,Data class,Data type,_version:1,_order:1387
+96a228fc-5abb-4a1f-ab7c-54bc21b5ca02,,,Nom et prénom du patient,Patient's name,Nom et prénom du patient,Patient's name,Misc,Text,,
+22d75710-1b5c-4963-a2ae-8a1a26580ce5,,,Service de soins,Service,Service de soins,Service,Misc,Text,,
+1bff21cf-4465-4dd5-87eb-54dcd556edaa,,,Date et heure du début de soins,Date and time of start of care,Date et heure du début de soins,Date and time of start of care,Misc,DateTime,,
+1794d4dd-49b1-4c85-a20a-1308a0a3dcff,,, Date et heure de fin des soins,Date and time of end of care,Date et heure de fin des soins,Date and time of end of care,Misc,DateTime,,
+1e828f36-a8a4-4104-bb51-295eac4c6755,Patient's name;Service;Room;Bed number;Date and time of start of care;Pulse;Blood Pressure;pleintes;Specific needs;Interventions;Date and time of end of care;Signature,,soin infirmier,Inpatient nursing care,Soin infirmier,Inpatient nursing care,Misc,N/A,,

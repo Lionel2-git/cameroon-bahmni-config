@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Bahmni>
+  <serviceSettings>
+    <LOGS_PATH>C:\EMR\bahmni\bahmni-service-logs</LOGS_PATH>
+    <TIMER_INTERVAL_MINS>15</TIMER_INTERVAL_MINS>
+    <EXECUTION_DIRECTORY>C:\EMR\bahmni</EXECUTION_DIRECTORY>
+    <FACILITY_NAME>Demo Facility</FACILITY_NAME>
+    <BACKUP_WAIT_MINS>2</BACKUP_WAIT_MINS>
+  </serviceSettings>
+</Bahmni>

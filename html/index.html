@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bahmni</title>
+    <style>
+        :root {
+            --primary: #090a0b;
+            --secondary: #38A169;
+            --tertiary: #9F7AEA;
+            --background: #F7FAFC;
+            --card-bg: #FFFFFF;
+            --text-dark: #2D3748;
+            --header-bg: #1A4B7A;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/images/mohLogo.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 35%;
+            opacity: 0.15;
+            z-index: -1;
+        }
+
+        /* En-tête réorganisé */
+        .header {
+            background: var(--header-bg);
+            padding: 1rem;
+            flex-shrink: 0;
+            position: relative;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .left-section, .right-section {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-group {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .client-logo {
+            height: 50px;
+            width: auto;
+        }
+
+        .ministry-info {
+            color: white;
+            font-size: 0.9rem;
+            margin-left: 1.5rem;
+            text-align: left;
+            border-left: 1px solid rgba(255,255,255,0.3);
+            padding-left: 1.5rem;
+        }
+
+        .hospital-info {
+            color: white;
+            font-size: 0.9rem;
+            text-align: right;
+            border-right: 1px solid rgba(255,255,255,0.3);
+            padding-right: 1.5rem;
+            margin-right: 1.5rem;
+        }
+
+        .hospital-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .welcome-message {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .welcome-message h1 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .modules-container {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .module {
+            width: 180px;
+            height: 180px;
+            background: rgba(255,255,255,0.95);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            border-top: 4px solid;
+        }
+
+        .module:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .module-clinique {
+            border-color: var(--primary);
+        }
+
+        .module-laboratoire {
+            border-color: var(--secondary);
+        }
+
+        .module-facturation {
+            border-color: var(--tertiary);
+        }
+
+        .module-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 1rem;
+        }
+
+        .module-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .module-title {
+            font-weight: 600;
+            color: var(--text-dark);
+            text-align: center;
+        }
+
+        .footer {
+            background: rgba(26, 32, 44, 0.9);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        .powered-by {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .powered-by img {
+            height: 20px;
+        }
+
+        @media (max-width: 768px) {
+            body::before {
+                background-size: 60%;
+                opacity: 0.12;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .left-section, .right-section {
+                width: 100%;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .ministry-info, .hospital-info {
+                margin: 0;
+                padding: 0;
+                border: none;
+                text-align: center;
+            }
+
+            .logo-group {
+                justify-content: center;
+                margin-bottom: 1rem;
+            }
+
+            .modules-container {
+                gap: 1rem;
+            }
+
+            .module {
+                width: 150px;
+                height: 150px;
+            }
+
+            .module-icon {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        @media (max-height: 700px) {
+            body::before {
+                background-size: 40%;
+            }
+            
+            .main-content {
+                padding: 0.5rem;
+            }
+            
+            .module {
+                width: 140px;
+                height: 140px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- En-tête réorganisé -->
+    <header class="header">
+        <div class="header-content">
+            <div class="left-section">
+                <div class="logo-group">
+                    <img class="client-logo" src="/images/mohLogo.png" alt="Logo Ministère">
+					<img class="client-logo" src="/images/hospitalLogo.png" alt="Logo Hôpital">
+                </div>
+                <div class="ministry-info">
+                    <div>Ministère de la Santé Publique du Cameroun</div>
+                </div>
+            </div>
+            
+            <div class="right-section">
+                <div class="hospital-info">
+                    <div class="hospital-name">Hôpital de District de la Cité Verte</div>
+                </div>
+                <div class="logo-group">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenu principal -->
+    <main class="main-content">
+        <div class="welcome-message">
+            <h1>Bienvenu au</h1>
+            <h1>Dossier Médical Electronique (DME)</h1>
+        </div>
+
+        <div class="modules-container">
+            <a href="/bahmni/home" class="module module-clinique">
+                <div class="module-icon">
+                    <img src="/bahmni/images/app.png" alt="Clinique">
+                </div>
+                <div class="module-title">Clinique</div>
+            </a>
+
+            <a href="/openelis" class="module module-laboratoire">
+                <div class="module-icon">
+                    <img src="/bahmni/images/lab.png" alt="Laboratoire">
+                </div>
+                <div class="module-title">Laboratoire</div>
+            </a>
+
+            <a id="erp-app-link" href="#" class="module module-facturation">
+                <div class="module-icon">
+                    <img src="/bahmni/images/bills.png" alt="Administratif">
+                </div>
+                <div class="module-title">Stock et Facturation</div>
+            </a>
+        </div>
+    </main>
+
+    <!-- Pied de page -->
+    <footer class="footer">
+        <div>Pour toute assistance, contactez le service informatique</div>
+        <div class="powered-by">
+            <img src="/bahmni/images/bahmniLogoFull.png" alt="Bahmni">
+            <a href="https://bahmni.atlassian.net/wiki/display/BAH/Bahmni+Home" style="color: white;">Aide</a>
+        </div>
+    </footer>
+
+    <script>
+        function init() {
+            getLogoAndHeaderText();
+        }
+
+        function getLogoAndHeaderText() {
+            fetch("/bahmni_config/openmrs/apps/home/whiteLabel.json")
+                .then(response => response.json())
+                .then(data => {
+                    if(data) {
+                        if(data.homePage.hospitalName) {
+                            document.querySelector('.hospital-name').textContent = data.homePage.hospitalName;
+                        }
+                        if(data.homePage.erpUrl) {
+                            document.getElementById('erp-app-link').href = data.homePage.erpUrl;
+                        }
+                    }
+                });
+        }
+
+           function init() {
+            serverTimeZone();
+            getLogoAndHeaderText();
+        }
+        function load(url, elementClass) {
+            callAjax(url, function (data) {
+                var infoElement = document.getElementsByClassName(elementClass)[0];
+                if (infoElement) {
+                    if (data) {
+                        var infoDetailsElement = infoElement.getElementsByClassName("info-details")[0];
+                        renderInfoLinks(data, infoDetailsElement);
+                    } else {
+                        var infoIconElement = infoElement.getElementsByClassName("info-icon")[0];
+                        infoIconElement.className += " error";
+                    }
+                }
+            });
+        }
+
+        window.onload = init;
+    </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+{
+        "id": "bahmni.registration",
+        "instanceOf":"bahmni.template.registration",
+        "description": "Bahmni Patient Registration App",
+        "extensionPoints": [
+            {
+                "id": "org.bahmni.registration.patient.search.result.action",
+                "description": "Bahmni Patient Search Result Action"
+            },
+            {
+                "id": "org.bahmni.registration.patient.next",
+                "description": "After Bahmni Patient Registration, forward url configuration"
+            }
+        ],
+        "contextModel": [
+            "patientUuid",
+            "activeVisitUuid"
+        ],
+        "config" : {
+            "showEnterID": false,
+            "patientInformation": {
+                "hidden": {
+                    "attributes": [
+                        "class",
+                        "caste",
+                        "primaryContact",
+                        "secondaryContact",
+                        "secondaryIdentifier",
+                        "primaryRelative",
+                        "landHolding",
+                        "PERSON_ATTRIBUTE_TYPE_PHONE_NUMBER",
+                        "PERSON_ATTRIBUTE_TYPE_OTHER_CAUSE_OF_DEATH",
+                        "PERSON_ATTRIBUTE_TYPE_TIME_OF_DEATH",
+                        "PERSON_ATTRIBUTE_TYPE_INDEX_KNOW_VIH_STATUS",
+                        "distanceFromCenter",
+                        "isUrban",
+                        "cluster",
+                        "RationCard",
+                        "familyIncome",
+                        "debt"
+                    ]
+                },
+                "defaults":  {
+                    "class": "General",
+                    "landHolding": 2
+                }
+            },
+       	    "readOnlyExtraIdentifiers": [""],
+            "addressHierarchy": {
+                "showAddressFieldsTopDown": false,
+                "strictAutocompleteFromLevel": "stateProvince"
+            },
+            "relationshipTypeMap": {
+                "Doctor":"provider",
+                "Parent":"patient"
+            },
+
+            "autoCompleteFields":["familyName"],
+            "defaultIdentifierPrefix": "HCV",
+            "defaultVisitType": "Consultations Internes / IPD",
+            "searchByIdForwardUrl": "/patient/{{patientUuid}}",
+            "showMiddleName": false,
+            "showLastName": true,
+            "isLastNameMandatory": true,
+            "showBirthTime": false,
+            "showCasteSameAsLastNameCheckbox": false,
+            "printOptions": [
+                {
+                    "translationKey": "REGISTRATION_PRINT_WITH_BARCODE",
+                    "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/printWithBarcode.html",
+                    "shortcutKey": "c"
+                }
+            ],
+            "conceptSetUI": {
+                "REGISTRATION FEES": {
+                    "required": false,
+                    "label": "Fee"
+                },
+                "FHS": {
+                    "buttonSelect": true
+                },
+                "defaults":{
+                    "FHS": "Present"
+                }
+            },
+            "fieldValidation" : {
+                "primaryContact" : {"pattern" : "[0-9]{0,}", "errorMessage" : "Should be 12 characters starting with 91 (country code)"},
+                "landHolding" : {"pattern" : "[0-9]{0,}", "errorMessage" : "Should be between 1 to 999 acres"},
+                "familyName" : {"pattern" : "*", "errorMessage" : "Should contain characters familly name"},
+                "givenName" : {"pattern" : "*", "errorMessage" : "Should contain characters given name"},
+                "middleName" : {"pattern" : "*", "errorMessage" : "Should contain characters middle name"},
+                "address1" : {"pattern" : "*", "errorMessage" : "Should contain 3 characters"},
+                "2042b38a-fbee-4d58-812e-496022130419" : {"pattern" : "[0-9]{0,}", "errorMessage" : "Should only be numbers"}
+            },
+            "patientSearch": {
+                "address": {
+                    "label": "REGISTRATION_SEARCH_ADDRESS_LABEL_KEY",
+                    "placeholder": "REGISTRATION_SEARCH_ADDRESS_PLACEHOLDER_KEY",
+                    "field": "city_village"
+                }, 
+                "customAttributes": {
+                    "label": "PERSON_ATTRIBUTE_TYPE_PHONE_NUMBER",
+                    "placeholder": "PERSON_ATTRIBUTE_TYPE_PHONE_NUMBER",
+                    "fields": ["PERSON_ATTRIBUTE_TYPE_PHONE_NUMBER"]
+                }
+            }
+        }
+}
